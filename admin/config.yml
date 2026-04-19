@@ -2,8 +2,6 @@ backend:
   name: github
   repo: GoranFriad/DR.GoranFryad
   branch: main
-  base_url: https://api.netlify.com
-  auth_endpoint: auth
 
 site_url: https://goranfriad.github.io/DR.GoranFryad
 display_url: https://goranfriad.github.io/DR.GoranFryad
