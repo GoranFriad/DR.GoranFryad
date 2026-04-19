@@ -7,7 +7,7 @@
       name="description"
       content="Goran Friad MD. FRCS Consultant Urologist Kidney Transplant Super-Specialist Uro-Oncologist Super-Specialist"
     />
-    <title>Home - Goran Friad MD</title>
+    <title id="pageTitle">Home - Goran Friad MD</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -74,7 +74,7 @@
             </svg>
           </div>
           <div class="logo-text">
-            <span class="logo-name">Goran Friad</span>
+            <span id="logoName" class="logo-name">Goran Friad</span>
             <span class="logo-title">MD</span>
           </div>
         </a>
@@ -111,11 +111,11 @@
             Consultant Urologist
           </div>
           <h1 data-animate="fade-up" data-delay="100">
-            <span class="hero-greeting">Hello, I'm</span>
-            <span class="hero-name">Goran Friad</span>
-            <span class="hero-suffix">MD. FRCS</span>
+            <span id="heroGreeting" class="hero-greeting">Hello, I'm</span>
+            <span id="heroName" class="hero-name">Goran Friad</span>
+            <span id="heroSuffix" class="hero-suffix">MD. FRCS</span>
           </h1>
-          <p class="hero-subtitle" data-animate="fade-up" data-delay="200">
+          <p id="heroSubtitle" class="hero-subtitle" data-animate="fade-up" data-delay="200">
             Consultant Urologist · Kidney Transplant Super-Specialist ·
             Uro-Oncologist Super-Specialist
           </p>
@@ -222,7 +222,7 @@
       <div class="container">
         <div class="section-header" data-animate="fade-up">
           <span class="section-tag">About</span>
-          <h2 class="section-title">Career Overview</h2>
+          <h2 id="aboutTitle" class="section-title">Career Overview</h2>
           <div class="section-line"></div>
         </div>
         <div class="about-grid">
@@ -677,13 +677,13 @@
       <div class="container">
         <div class="blog-cta-content" data-animate="fade-up">
           <span class="section-tag light">Blog</span>
-          <h2>Get Up to Date Management</h2>
-          <p>
+          <h2 id="blogHeading">Get Up to Date Management</h2>
+          <p id="blogDescription">
             Stay informed with the latest medical insights, treatment
             approaches, and urological health information.
           </p>
           <a href="#" class="btn btn-light">
-            <span>Visit My Blog</span>
+            <span id="blogButtonText">Visit My Blog</span>
             <svg
               width="20"
               height="20"
@@ -726,7 +726,7 @@
               </div>
               <div>
                 <h4>Phone</h4>
-                <p>07737330003</p>
+                <p id="contactPhone">07737330003</p>
               </div>
             </div>
             <div class="contact-item">
@@ -862,7 +862,7 @@
           </div>
         </div>
         <div class="footer-bottom">
-          <p>Copyright &copy; 2026 Goran Friad MD</p>
+          <p id="footerCopyright">Copyright &copy; 2026 Goran Friad MD</p>
         </div>
       </div>
     </footer>
@@ -905,7 +905,9 @@
       </div>
     </div>
 
+    <!-- CMS Data Loader -->
     <script src="cms-loader.js"></script>
+    <!-- Main Script -->
     <script src="script.obf.js"></script>
   </body>
 </html>
