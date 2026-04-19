@@ -1,46 +1,62 @@
-(function () {
-  var DATA_URL = "./data/site.json";
+// CMS Loader for Dr. Goran Friad Website
 
-  function setText(selector, value, options) {
-    if (!value && value !== 0) return;
-
-    var settings = options || {};
-    var nodes = settings.all
-      ? document.querySelectorAll(selector)
-      : [document.querySelector(selector)];
-
-    nodes.forEach(function (node) {
-      if (node) node.textContent = String(value);
-    });
-  }
-
-  function applyContent(data) {
-    setText(".hero-greeting", data.heroGreeting);
-    setText(".hero-name", data.heroName);
-    setText(".hero-suffix", data.heroSuffix);
-    setText(".hero-subtitle", data.heroSubtitle);
-    setText("#about .section-title", data.aboutTitle);
-    setText("#blog h2", data.blogHeading);
-    setText("#blog p", data.blogDescription);
-    setText("#blog .btn span", data.blogButtonText);
-    setText("#contact .contact-item:first-child p", data.contactPhone);
-    setText(".logo-name", data.siteName, { all: true });
-    setText(".footer-bottom p", data.footerCopyright, { all: true });
-
-    if (data.heroName) {
-      document.title = "Home - " + data.heroName + " MD";
+async function loadCMSData() {
+    try {
+        const response = await fetch('/data/site.json');
+        const data = await response.json();
+        
+        // Update all CMS-controlled elements
+        if (data.siteName) {
+            document.querySelector('.logo-name').textContent = data.siteName;
+            document.title = `${data.siteName} - MD`;
+        }
+        
+        if (data.heroGreeting) {
+            document.getElementById('heroGreeting').textContent = data.heroGreeting;
+        }
+        
+        if (data.heroName) {
+            document.getElementById('heroName').textContent = data.heroName;
+        }
+        
+        if (data.heroSuffix) {
+            document.getElementById('heroSuffix').textContent = data.heroSuffix;
+        }
+        
+        if (data.heroSubtitle) {
+            document.getElementById('heroSubtitle').textContent = data.heroSubtitle;
+        }
+        
+        if (data.aboutTitle) {
+            document.getElementById('aboutTitle').textContent = data.aboutTitle;
+        }
+        
+        if (data.blogHeading) {
+            document.getElementById('blogHeading').textContent = data.blogHeading;
+        }
+        
+        if (data.blogDescription) {
+            document.getElementById('blogDescription').textContent = data.blogDescription;
+        }
+        
+        if (data.blogButtonText) {
+            document.getElementById('blogButtonText').textContent = data.blogButtonText;
+        }
+        
+        if (data.contactPhone) {
+            document.getElementById('contactPhone').textContent = data.contactPhone;
+        }
+        
+        if (data.footerCopyright) {
+            document.getElementById('footerCopyright').textContent = data.footerCopyright;
+        }
+        
+        console.log('✅ CMS data loaded successfully');
+        
+    } catch (error) {
+        console.log('📌 Using default content - CMS not yet configured');
     }
-  }
+}
 
-  fetch(DATA_URL + "?v=" + Date.now(), { cache: "no-store" })
-    .then(function (response) {
-      if (!response.ok) {
-        throw new Error("Failed to load CMS data");
-      }
-      return response.json();
-    })
-    .then(applyContent)
-    .catch(function (error) {
-      console.warn("CMS loader warning:", error.message);
-    });
-})();
+// Load when page is ready
+document.addEventListener('DOMContentLoaded', loadCMSData);
