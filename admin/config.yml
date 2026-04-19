@@ -1,0 +1,29 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "iimage/uploads"
+public_folder: "/iimage/uploads"
+
+publish_mode: editorial_workflow
+
+collections:
+  - name: "site_content"
+    label: "Site Content"
+    files:
+      - label: "Homepage Content"
+        name: "homepage"
+        file: "data/site.json"
+        format: "json"
+        fields:
+          - { label: "Site Name", name: "siteName", widget: "string" }
+          - { label: "Hero Greeting", name: "heroGreeting", widget: "string" }
+          - { label: "Hero Name", name: "heroName", widget: "string" }
+          - { label: "Hero Suffix", name: "heroSuffix", widget: "string" }
+          - { label: "Hero Subtitle", name: "heroSubtitle", widget: "text" }
+          - { label: "About Section Title", name: "aboutTitle", widget: "string" }
+          - { label: "Blog Heading", name: "blogHeading", widget: "string" }
+          - { label: "Blog Description", name: "blogDescription", widget: "text" }
+          - { label: "Blog Button Text", name: "blogButtonText", widget: "string" }
+          - { label: "Contact Phone", name: "contactPhone", widget: "string" }
+          - { label: "Footer Copyright", name: "footerCopyright", widget: "string" }
