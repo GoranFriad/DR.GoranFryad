@@ -2,6 +2,10 @@ backend:
   name: github
   repo: GoranFriad/DR.GoranFryad
   branch: main
+  base_url: https://api.github.com
+  auth_endpoint: authorize
+  auth_type: pkce
+  client_id: Ov23liKn43iuquXk4JiT
 
 site_url: https://goranfriad.github.io/DR.GoranFryad
 display_url: https://goranfriad.github.io/DR.GoranFryad
