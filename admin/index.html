@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Content Admin</title>
+    <title>Dr. Goran - Content Admin</title>
     <style>
       body {
         margin: 0;
@@ -15,33 +15,21 @@
           Helvetica,
           Arial,
           sans-serif;
-        background: #f4f7fb;
+        background: #0a1628;
       }
-
       .loading {
         min-height: 100vh;
         display: grid;
         place-items: center;
-        color: #1d3557;
-        font-size: 1rem;
+        color: white;
+        font-size: 1.2rem;
       }
     </style>
   </head>
   <body>
     <div class="loading">Loading CMS...</div>
 
-    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-    <script src="https://unpkg.com/decap-cms@3.6.2/dist/decap-cms.js"></script>
-    <script>
-      if (window.netlifyIdentity) {
-        window.netlifyIdentity.on("init", function (user) {
-          if (!user) {
-            window.netlifyIdentity.on("login", function () {
-              document.location.href = "/admin/";
-            });
-          }
-        });
-      }
-    </script>
+    <!-- ONLY Decap CMS - NO Netlify Identity! -->
+    <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
   </body>
 </html>
